@@ -1,6 +1,18 @@
 # React_Udemy_Course_2024
 
-All practical examples relating to the React courses from Udemy and The YouTube channel Chai Aur Code will be saved here
+All practical examples relating to the React courses from Udemy and The YouTube channel Learn with Sumit will be saved here
+
+(1) What is React?
+React is a JavaScript library to create dynamic and interactive User Interfaces.
+It is developed by Jordan Walke, a Facebook engineer, who was working in the UI development team of Facebook in the year 2011.
+
+(2) How React works?
+There are two packages that are mainly required to create any React project. they are - 
+(i) React, (ii) React-DOM.
+
+React is responsible to create HTML contents, and
+React-DOM is responsible to update the browser's DOM with the HTML contents created by React package.
+
 
 (3) Components in React?
 i) React applications are entirely made out of components
