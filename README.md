@@ -8,11 +8,10 @@ It is developed by Jordan Walke, a Facebook engineer, who was working in the UI 
 
 (2) How React works?
 There are two packages that are mainly required to create any React project. they are - 
-(i) React, (ii) React-DOM.
-
-React is responsible to create HTML contents, and
-React-DOM is responsible to update the browser's DOM with the HTML contents created by React package.
-
+(i) React, (ii) ReactDOM.
+* The package "React" is responsible to create HTML contents, and
+* The package "ReactDOM" is responsible to update the browser's DOM with the HTML contents created by React package.
+React JS creates its own virtual DOM seperate from the actual browser DOM and update the browser DOM according to changes made in the virtual DOM.
 
 (3) Components in React?
 i) React applications are entirely made out of components
@@ -55,7 +54,7 @@ What does an imparative approach do :
 (i) Manual DOM element selection and manipulation
 (ii) Step-by-step DOM mutation until we reach our targetted UI
 
-What does an declarative approach do :
+What does a declarative approach do :
 (i) Describe what an UI should look like based on our current data
 (ii) Never touches the DOM (React is an abstraction away from DOM)
 (iii) In declarative approach we think of the UI as a reflection of the current data.
