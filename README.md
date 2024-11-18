@@ -13,6 +13,13 @@ There are two packages that are mainly required to create any React project. the
 * The package "ReactDOM" is responsible to update the browser's DOM with the HTML contents created by React package.
 React JS creates its own virtual DOM seperate from the actual browser DOM and update the browser DOM according to changes made in the virtual DOM.
 
+(3) What is React Element?
+Each React module returns one block of JSX code, that one block of code is called React Element.
+React elements are immutable in nature, i.e. its content never changes at runtime.
+A React component is created using one or more block of codes.
+
+Each JSX code is converted into a JavaScript object at the end. React tries to understand that object and updates its virtual DOM accordingly.
+
 (3) Components in React?
 i) React applications are entirely made out of components
 ii) Components are the building blocks of React applications
@@ -58,3 +65,5 @@ What does a declarative approach do :
 (i) Describe what an UI should look like based on our current data
 (ii) Never touches the DOM (React is an abstraction away from DOM)
 (iii) In declarative approach we think of the UI as a reflection of the current data.
+
+
