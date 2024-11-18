@@ -11,14 +11,65 @@ There are two packages that are mainly required to create any React project. the
 (i) React, (ii) ReactDOM.
 * The package "React" is responsible to create HTML contents, and
 * The package "ReactDOM" is responsible to update the browser's DOM with the HTML contents created by React package.
-React JS creates its own virtual DOM seperate from the actual browser DOM and update the browser DOM according to changes made in the virtual DOM.
+React JS creates its own virtual DOM seperate from the actual browser DOM and updates the browser DOM according to changes made in the virtual DOM.
 
 (3) What is React Element?
 Each React module returns one block of JSX code, that one block of code is called React Element.
-React elements are immutable in nature, i.e. its content never changes at runtime.
-A React component is created using one or more block of codes.
+React elements are immutable in nature, i.e. their content never change at runtime.
+A React component is created using one or more block of codes (React Elements).
 
-Each JSX code is converted into a JavaScript object at the end. React tries to understand that object and updates its virtual DOM accordingly.
+Each React element is converted into a JavaScript object at the end. React tries to understand that object and updates its virtual DOM accordingly.
+
+ex.-
+
+const element = (
+  <div className="container">
+    <h1 id="title">React Element</h1>
+    <div className="details">
+      <p>React element is a simple block of JSX code</p>
+      <p>It is usually immutable in nature. We cannot change the entire content rather we can change data only.</p>
+    </div>
+  </div>
+);
+ReactDOM.render(element, document.getElementById("root"));
+
+The above code will be converted into a JavaScript object by React, like this -
+
+{
+  type: "div",
+  props: {
+    className: "container",
+    children: [
+      {
+        type: "h1",
+        props: {
+          id: "title",
+          children: "React Element"
+        }
+      },
+      {
+        type: "div",
+        props: {
+          className: "details",
+          children: [
+            {
+              type: "p",
+              props: {
+                children: "React element is a simple block of JSX code"
+              }
+            },
+            {
+              type: "p",
+              props: {
+                children: "It is usually immutable in nature. We cannot change the entire content rather we can change data only."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
 
 (3) Components in React?
 i) React applications are entirely made out of components
