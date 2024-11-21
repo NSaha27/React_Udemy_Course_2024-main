@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+#book-list {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  color: #008080;
+  margin-bottom: 1rem;
+}
+.books table {
+  width: 100%;
+}
+.books table tr {
+  text-align: center;
+}
+.books table tr th, .books table tr td {
+  padding: 1rem;
+  border: 1px solid #008080;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: #2c2c2c;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  .books table tr th, .books table tr td {
+    font-size: 0.9rem;
+  }
+}
