@@ -4,11 +4,16 @@ import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
-    <>
+    <div className="container" style={{
+        width: "30%",
+        margin: "2rem auto",
+        border: "2px solid #181818",
+        borderRadius: "1rem",
+    }}>
       <Header />
       <Profile />
       <Footer />
-    </>
+    </div>
   )
 }
 
