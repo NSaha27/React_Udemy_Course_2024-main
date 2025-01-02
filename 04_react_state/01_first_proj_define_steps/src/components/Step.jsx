@@ -6,10 +6,12 @@ function Step(props){
   const [step, setStep] = useState(1);
   // performing one step down action
   const stepDown = () => {
+    // if(step > 1) step -= 1; // this manual setup of the step is wrong, the code will not work
     if(step > 1) setStep(step - 1);
   };
   // performing one step up action
   const stepUp = () => {
+    // if(step < 3) step += 1; // this manual setup of the step is wrong, the code will not work
     if(step < 3) setStep(step + 1);
   };
 
