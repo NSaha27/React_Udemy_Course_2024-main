@@ -13,33 +13,26 @@ function GetAdvice(props){
     }
   }
 
-  function hideAdvice(){
-    setIsOpen(false);
-  }
-
-  function showAdvice(){
-    setIsOpen(true);
-  }
-
   return <div className="card">
     {
-      isOpen ?
+      isOpen ? 
       <>
         <div>
-          <button className="closeBtn" onClick={hideAdvice}>&times;</button>
+          <button className="closeBtn" onClick={() => setIsOpen(!isOpen)}>&times;</button>
         </div>
         <div>
           <h1 className="advice">"{advice}"</h1>
           <p className="counter">You're now at advice no. <span>{count}</span></p>
           <button className="submitBtn" onClick={changeAdvice}>Get new advice</button>
         </div>
-      </> :
+      </>
+      :
       <>
         <div>
-          <button className="openBtn" onClick={showAdvice}>+</button>
+          <button className="openBtn" onClick={() => setIsOpen(!isOpen)}>+</button>
         </div>
         <div>
-          <h1 className="advice">Please click on the above button to get advices</h1>
+          <h1 className="advice">Click on the above button to get the advices</h1>
         </div>
       </>
     }
