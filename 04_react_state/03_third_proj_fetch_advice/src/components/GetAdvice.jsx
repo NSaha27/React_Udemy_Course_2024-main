@@ -9,7 +9,7 @@ function GetAdvice(props){
   function changeAdvice(){
     if(count < props.advices.length){
       setAdvice(props.advices[count]);
-      setCount(count + 1);
+      setCount(count => count + 1);
     }
   }
 
@@ -32,7 +32,7 @@ function GetAdvice(props){
           <button className="openBtn" onClick={() => setIsOpen(!isOpen)}>+</button>
         </div>
         <div>
-          <h1 className="advice">Click the above button on the corner to get the advices</h1>
+          <h1 className="advice">Click on the above button to the corner to get the advices</h1>
         </div>
       </>
     }
