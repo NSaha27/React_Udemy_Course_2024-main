@@ -10,7 +10,7 @@
 .header {
   width: 100%;
   padding: 1rem 3rem;
-  background-color: rgb(45, 45, 126);
+  background-color: #2d2d7e;
 }
 .logo-pagetitle {
   display: flex;
@@ -63,7 +63,7 @@
   transition: 0.2s;
 }
 .nav-link:hover {
-  background-color: rgba(110, 110, 202, 0.4);
+  background-color: #6e6eca66;
 }
 
 /* MAIN */
@@ -135,4 +135,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  display: flex;
+  padding: 3rem;
+  background-color: #2d2d7e;
+}
+.footer small {
+  color: #fff;
+  margin: 0 auto;
 }
