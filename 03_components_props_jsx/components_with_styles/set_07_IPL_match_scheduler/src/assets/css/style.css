@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  padding: 1rem 3rem;
+  background-color: rgb(45, 45, 126);
+}
+.logo-pagetitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.logo-pagetitle img {
+  width: 7rem;
+}
+.logo-pagetitle div .title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  word-spacing: 3px;
+  color: #fff;
+  line-height: 2rem;
+}
+.logo-pagetitle div h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  word-spacing: 2px;
+  color: #fff;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.nav-item {
+  float: left;
+}
+.nav-link {
+  text-decoration: none;
+  display: block;
+  padding: 1rem 6rem;
+  font-size: 1rem;
+  color: #fff;
+  transition: 0.2s;
+}
+.nav-link:hover {
+  background-color: rgba(110, 110, 202, 0.4);
+}
+
+/* MAIN */
+
+.container {
+  width: 100%;
+  background-color: #111;
+}
+.sec {
+  width: 100%;
+  min-height: 100vh;
+}
+#sec1 {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.matchList {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+/* MATCHES */
+
+.match {
+  border: 1px solid #f1f1f1;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+.matchNumAndDate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.teams {
+  margin-top: 1.5rem;
+}
+.teamInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.8rem;
+}
+.team {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.team img {
+  width: 2rem;
+  height: 2.25rem;
+}
+.team a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #fff;
+}
+.team a:hover {
+  color: #ffc0cb;
+}
+.matchTimeLocation {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
