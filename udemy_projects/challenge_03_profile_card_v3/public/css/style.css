@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}
+
+/* CARD */
+
+.card {
+  width: 40%;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #800080;
+  border-radius: 0.8rem;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  background-color: #800080;
+}
+
+/* PERSONAL INFO */
