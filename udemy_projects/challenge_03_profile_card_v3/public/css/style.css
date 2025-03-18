@@ -5,25 +5,128 @@
   font-family: sans-serif;
 }
 
-.container {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #f5f5dc;
+body {
+  background-color: #383058;
+  font-family: Montserrat, sans-serif;
+  padding: 2rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  padding: 4rem;
+
+  min-height: 100vh;
+  margin: 0;
 }
 
-/* CARD */
+h3 {
+  margin: 12px 0;
+}
 
-.card {
-  width: 40%;
-  margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid #800080;
-  border-radius: 0.8rem;
+h6 {
+  margin: 6px 0;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 14px;
+  line-height: 32px;
+}
+
+/* CARD CONTAINER */
+
+.card-container {
+  background-color: #181427;
+  border-radius: 5px;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-  background-color: #800080;
+  color: #b3b8cd;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
 }
 
 /* PERSONAL INFO */
+
+.personal-info .pro {
+  color: #231e39;
+  background-color: #febb0b;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.personal-info .profile-image {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #03bfcb;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+/* MESSAGE */
+
+button.primary {
+  background-color: #03bfcb;
+  border: 1px solid #03bfcb;
+  border-radius: 3px;
+  color: #231e39;
+  font-size: 15px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  padding: 10px 25px;
+}
+
+button.primary.ghost {
+  background-color: transparent;
+  font-size: 15px;
+  color: #02899c;
+  margin-left: 4px;
+}
+.message-box {
+  width: 100%;
+  padding: 1rem;
+}
+.form-group {
+  margin: 0.5rem 0;
+}
+textarea.form-control {
+  width: 72%;
+  font-size: 0.9rem;
+  background-color: #2d2747;
+  border: 2px solid #02899c;
+  color: #fff;
+  padding: 2px;
+}
+
+.btn {
+  width: 72%;
+}
+
+/* SKILLS */
+
+.skills {
+  background-color: #1f1a36;
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.skills ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills ul li {
+  border: 1px solid #2d2747;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 7px 7px 0;
+  padding: 7px;
+}

@@ -3,7 +3,7 @@ function PersonalInfo(props) {
     <div className="personal-info">
       <span className="pro">{props.profileExperience}</span>
       <img
-        src={props.profileImage}
+        src={"images/" + props.profileImage}
         alt={props.profileName}
         className="profile-image"
       />
