@@ -32,7 +32,8 @@ function MatchResult(props) {
   return (
     <div className="match-result">
       <h3>
-        {team1Score > team2Score &&
+        {/* conditional rendering using && operator (short-circuiting)  */}
+        {/* {team1Score > team2Score &&
           props.team1.teamTitle +
             " won the match by " +
             (props.team1.batFirst
@@ -43,7 +44,23 @@ function MatchResult(props) {
             " won the match by " +
             (props.team2.batFirst
               ? team2Score - team1Score + " runs"
-              : 10 - team2WicketFall + " wickets")}
+              : 10 - team2WicketFall + " wickets")} */}
+
+        {/* conditional rendering using ternery operator */}
+        {team1Score > team2Score
+          ? props.team1.teamTitle +
+            " won the match by " +
+            (props.team1.batFirst
+              ? team1Score - team2Score + " runs"
+              : 10 - team1WicketFall + " wickets")
+          : null}
+        {team2Score > team1Score
+          ? props.team2.teamTitle +
+            " won the match by " +
+            (props.team2.batFirst
+              ? team2Score - team1Score + " runs"
+              : 10 - team2WicketFall + " wickets")
+          : null}
       </h3>
     </div>
   );
