@@ -1,3 +1,5 @@
+import "./style.css";
+
 function MatchResult(props) {
   const team1Score = props.team1.players.reduce(
     (totalScore, player, index, array) => {
@@ -29,13 +31,20 @@ function MatchResult(props) {
   );
   return (
     <div className="match-result">
-      <h6>
-        {team1Score > team2Score
-          ? props.team1.teamTitle
-          : props.team2.teamTitle + " won the match by " + props.team1.batFirst
-          ? team1Score - team2Score + " runs"
-          : 10 - team1WicketFall + " wickets"}
-      </h6>
+      <h3>
+        {team1Score > team2Score &&
+          props.team1.teamTitle +
+            " won the match by " +
+            (props.team1.batFirst
+              ? team1Score - team2Score + " runs"
+              : 10 - team1WicketFall + " wickets")}
+        {team2Score > team1Score &&
+          props.team2.teamTitle +
+            " won the match by " +
+            (props.team2.batFirst
+              ? team2Score - team1Score + " runs"
+              : 10 - team2WicketFall + " wickets")}
+      </h3>
     </div>
   );
 }

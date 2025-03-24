@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* TEAM LIST */
+.team-list {
+  width: 42%;
+  border: 2px solid #800080;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.team-title {
+  background-color: #800080;
+  color: #ffd700;
+  padding: 0.6rem 0rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.players table {
+  width: 100%;
+  text-align: left;
+}
+.players table tr th,
+.players table tr td {
+  padding: 0.4rem 0rem;
+  color: #800080;
+  text-transform: capitalize;
+}
+
+/* MATCH RESULT */
+.match-result {
+  text-align: center;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1.2rem 0rem;
+  background-color: #800080;
+  color: #ffd700;
+}
+.match-result h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
