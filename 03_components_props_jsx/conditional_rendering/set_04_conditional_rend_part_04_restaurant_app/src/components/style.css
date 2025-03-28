@@ -107,6 +107,7 @@ h4 {
   display: grid;
   grid-template-columns: 30% 67%;
   column-gap: 3%;
+  box-shadow: 0px 2px 12px rgba(250, 20, 0, 0.3);
 }
 
 .item .item-image {
