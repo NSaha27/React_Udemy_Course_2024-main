@@ -1,33 +1,29 @@
-function Item(props) {
+function Item({ itemObj, isLoggedIn }) {
   return (
     <div className="item">
       <img
-        src={"images/" + props.itemObj.itemImage}
-        alt={props.itemObj.itemName}
+        src={"images/" + itemObj.itemImage}
+        alt={itemObj.itemName}
         className="item-image"
       />
       <div className="item-details">
-        <h3>{props.itemObj.itemName}</h3>
-        <p>{props.itemObj.itemInfo}</p>
+        <h3>{itemObj.itemName}</h3>
+        <p>{itemObj.itemInfo}</p>
         <h6
           style={{
-            color: props.itemObj.itemCategory === "veg" ? "green" : "maroon",
+            color: itemObj.itemCategory === "veg" ? "green" : "maroon",
           }}
         >
-          ( {props.itemObj.itemCategory} )
+          ( {itemObj.itemCategory} )
         </h6>
-        <h3>Rs.{props.itemObj.itemPrice.toFixed(2)}/-</h3>
-        {props.itemObj.isSoldOut ? (
+        <h3>Rs.{itemObj.itemPrice.toFixed(2)}/-</h3>
+        {itemObj.isSoldOut ? (
           <h4>Sold out</h4>
         ) : (
           <>
-            {props.isLoggedIn ? (
+            {isLoggedIn ? (
               <form action="/cart" method="post">
-                <input
-                  type="hidden"
-                  name="itemID"
-                  value={props.itemObj.itemID}
-                />
+                <input type="hidden" name="itemID" value={itemObj.itemID} />
                 <button type="submit" className="btn btn-warning">
                   Add to Cart
                 </button>

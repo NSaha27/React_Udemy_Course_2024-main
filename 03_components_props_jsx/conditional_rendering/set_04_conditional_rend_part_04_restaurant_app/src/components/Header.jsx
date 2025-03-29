@@ -1,10 +1,10 @@
 import Navbar from "./Navbar";
 import "./style.css";
 
-function Header(props) {
+function Header({ appTitle }) {
   return (
     <div className="header">
-      <h2 className="app-title">{props.appTitle}</h2>
+      <h2 className="app-title">{appTitle}</h2>
       <Navbar />
     </div>
   );
