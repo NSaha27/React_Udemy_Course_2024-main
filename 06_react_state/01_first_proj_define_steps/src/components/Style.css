@@ -1,0 +1,76 @@
+.step {
+  width: 40%;
+  border-radius: 1rem;
+  box-shadow: 0 2px 15px #808080;
+  background-color: #f5f5dc;
+} 
+
+/* STEP NUMBER DIV */
+
+.step-number {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active {
+  background-color: #800080;
+  color: #fff;
+}
+
+.step-number span {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* STEP MESSAGE DIV */
+
+.step-message {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #800080;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* STEP BUTTONS DIV */
+
+.step-buttons {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-buttons button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #800080;
+  color: #fff;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.step-buttons button:hover {
+  background-color: #640064;
+}
