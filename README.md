@@ -142,3 +142,32 @@ What does a declarative approach do :
     inline rendering - Directly inside JSX code, ex. - {items.map(item => <li key={item.id}>{item.name}</li>)}
     KEY property - Assign unique key into each JSX element for optimized re-rendering
     <div key={item.id}>{item.name}</div>
+
+11. Conditional Rendering?
+
+    1. Displaying content based on certain condition,
+    2. Allows for dynamic user interfaces.
+
+12. Methods used in conditional rendering?
+
+    1. if-else statement - choose between two blocks of content.
+    2. ternery-operator - Quick way to choose between two options.
+    3. Conditional && operator - useful for rendering a content when a condition is true.
+
+13. Benefits of Conditional Rendering?
+
+    1. Enhances user experience,
+    2. Reduces unnecessary rendering,
+    3. Makes apps more interactive and responsive.
+
+14. What are Props in React?
+    props are the mechanism of passing data from one component(mainly parent component) to another component(mainly child component) through attributes.
+
+15. usage of props?
+    1. Pass data from parent to child component,
+    2. Making a component reusable,
+    3. Defined as attributes in JSX.
+16. Key-points relating to Props?
+    1. They are immutable, we cannot change the value of a prop, we can only use them,
+    2. They flow downwards, i.e. from parent to its child component(s),
+    3. Used for communication between components.
