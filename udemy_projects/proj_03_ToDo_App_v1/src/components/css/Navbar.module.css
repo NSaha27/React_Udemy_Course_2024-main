@@ -1,0 +1,15 @@
+.navbar {
+  width: 100%;
+  padding: 0.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+.logo {
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #800000;
+}

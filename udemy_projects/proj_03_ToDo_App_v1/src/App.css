@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 90vh;
+  padding: 3rem 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
