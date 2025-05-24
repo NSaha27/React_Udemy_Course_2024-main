@@ -168,6 +168,14 @@ What does a declarative approach do :
     2. Making a component reusable,
     3. Defined as attributes in JSX.
 16. Key-points relating to Props?
+
     1. They are immutable, we cannot change the value of a prop, we can only use them,
     2. They flow downwards, i.e. from parent to its child component(s),
     3. Used for communication between components.
+
+17. Handling Events?
+    1. React events use camelCase e.g. onClick,
+    2. Uses synthetic events, not direct browser events,
+    3. Event handlers can be normal functions or arrow functions,
+    4. Use onChange for controlled form inputs,
+    5. Avoid inline arrow functions in JSX for better performance and cleaner code.

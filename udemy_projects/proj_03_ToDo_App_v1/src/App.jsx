@@ -22,7 +22,7 @@ function App() {
   function addTodo(formData) {
     const newTodo = {
       todo: formData.todo,
-      todoDateTime: formData.todoDate,
+      todoDate: formData.todoDate,
     };
     setTodos((prevTodos) => [...prevTodos, newTodo]);
   }

@@ -3,10 +3,7 @@ import Button from "./Button";
 import style from "./css/Form.module.css";
 
 function Form({ addTodo }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    value: "",
-  });
+  const [formData, setFormData] = useState({});
 
   function handleChange(ev) {
     const name = ev.target.name;

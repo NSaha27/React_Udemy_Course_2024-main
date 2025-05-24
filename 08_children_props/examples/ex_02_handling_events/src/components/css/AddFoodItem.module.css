@@ -1,0 +1,22 @@
+.add-food-item {
+  width: 100%;
+  padding: 1rem 0rem;
+}
+.add-food-item input {
+  border: 2px solid #222;
+  border-radius: 1rem;
+  padding: 5px 15px;
+  margin-right: 4px;
+  background-color: #f7f7f7;
+}
+.btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 8px 16px;
+  background-color: #006400;
+  color: #fff;
+  text-transform: capitalize;
+}
+.btn:hover {
+  background-color: #008000;
+}

@@ -1,0 +1,26 @@
+.food-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.food-item-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #800000;
+}
+
+.btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 8px 16px;
+  background-color: #006400;
+  color: #fff;
+  text-transform: capitalize;
+}
+.btn:hover {
+  background-color: #008000;
+}
