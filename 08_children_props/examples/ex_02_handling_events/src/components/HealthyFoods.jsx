@@ -7,7 +7,15 @@ function HealthyFoods({ foodList }) {
     <div className={`w-100`}>
       <ul className="list-group">
         {foodList.map((food, indx) => {
-          return <FoodItem foodItem={food} key={indx} />;
+          return (
+            <FoodItem
+              foodItem={food}
+              key={indx}
+              handleBuyBtnClick={() => {
+                console.log(`Thanks for buying ${food}`);
+              }}
+            />
+          );
         })}
       </ul>
     </div>

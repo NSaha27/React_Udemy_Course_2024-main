@@ -174,8 +174,36 @@ What does a declarative approach do :
     3. Used for communication between components.
 
 17. Handling Events?
+
     1. React events use camelCase e.g. onClick,
     2. Uses synthetic events, not direct browser events,
     3. Event handlers can be normal functions or arrow functions,
     4. Use onChange for controlled form inputs,
     5. Avoid inline arrow functions in JSX for better performance and cleaner code.
+
+18. Passing functions via props?
+
+    1. Pass dynamic behavior between components,
+    2. Enables upward communication from child to parent component,
+    3. Commonly used for event handling,
+    4. Parent defines a function, and child invokes it,
+    5. Enhances component interactivity,
+    6. ex.
+       <Button onClick={handleClick}>
+
+19. How to manage States?
+
+    1. State represents data that change over time,
+    2. State is local and private to the component,
+    3. State changes cause the component to re-render,
+    4. For functional components, use the useState hook,
+    5. React functions that start with the keyword "use" are called hooks,
+    6. Hooks should only be used inside components,
+    7. Parent components pass hooks to child components via props,
+    8. Lifting state up: share states between components by moving it to their closest common ancestors.
+
+20. Example of React State?
+    const [formData, setFormData] = useState({username: "", phone: "", email: "", password: ""});
+
+    Note -
+    useState hook takes an initial value as parameter, and returns an array of exactly two values, one is the current value of the state, and another is the updator function that updates the current value.
