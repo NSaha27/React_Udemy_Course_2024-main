@@ -1,0 +1,34 @@
+.add-todo {
+  width: 70%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.add-todo form {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 1%;
+}
+.form-group {
+  width: 14rem;
+  padding: 1rem;
+}
+.form-control {
+  width: 100%;
+  border: 2px solid #222;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.add-button {
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  background-color: #008000;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #006400;
+}

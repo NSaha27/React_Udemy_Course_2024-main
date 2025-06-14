@@ -207,3 +207,20 @@ What does a declarative approach do :
 
     Note -
     useState hook takes an initial value as parameter, and returns an array of exactly two values, one is the current value of the state, and another is the updator function that updates the current value.
+
+21. How to add and import React-Icons in your project?
+      step 1. Install react-icons package - "npm install react-icons --save"
+      step 2. import any icon in your .jsx file - 'import {IconName} from "react-icons/ri"'
+      step 3. Use the icon as a react element - "<IconName />".
+
+22. React Developer Tools -
+    Advantages -
+      1. Inspection - Allows inspection of React component hierarchies.
+      2. State & Props - View and edit current state and props(view only) of a component.
+      3. Performance - Analize component re-renders and performance bottlenecks.
+      4. Navigation - Conveniently navigate through the entire component tree.
+      5. Filtering - Filter components by their name and source to locate them quickly.
+      6. Real-time feedback - See live changes as we modify state and props. 
+
+23. How React works?
+    1. Root Component - 

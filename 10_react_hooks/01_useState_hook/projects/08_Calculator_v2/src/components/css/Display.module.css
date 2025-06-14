@@ -1,0 +1,14 @@
+.display {
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 2px solid #222;
+  border-radius: 8px;
+}
+#display-input {
+  width: 100%;
+  padding: 1.2rem;
+  border: 1px solid #222;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
