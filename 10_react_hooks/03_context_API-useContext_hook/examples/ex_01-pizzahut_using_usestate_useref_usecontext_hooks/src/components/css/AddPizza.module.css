@@ -1,0 +1,52 @@
+.add-pizza {
+  width: 70%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-pizza-btn {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #ff4b4b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.add-pizza-btn:hover {
+  background-color: #e70000;
+}
+.add-pizza-div {
+  width: 60%;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.add-pizza-div p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.add-pizza-div > div {
+  width: 100%;
+  margin-top: 1rem;
+}
+.form-group {
+  width: 100%;
+  padding: 0.8rem 0;
+}
+.form-label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.form-control {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.4rem;
+  border: 2px solid #e70000;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}

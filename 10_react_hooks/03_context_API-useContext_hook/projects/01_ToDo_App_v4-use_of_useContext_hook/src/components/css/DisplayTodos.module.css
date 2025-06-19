@@ -1,0 +1,14 @@
+.display-todos {
+  width: 70%;
+  margin: 0 auto;
+}
+.no-todo-msg {
+  width: 70%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #800000;
+  color: #fff;
+  font-size: 1rem;
+}
