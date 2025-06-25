@@ -1,4 +1,4 @@
-function Pizza({pizza, userType}){
+function Pizza({pizza, deletePizzaFromList, userType}){
   return <div className="">
     <img src={`images/${pizza.imageFileName}`} alt={pizza.pizzaName} className="" />
     <div className="">
@@ -12,15 +12,15 @@ function Pizza({pizza, userType}){
       {
         userType === "customer" &&
         <div className="">
-          <button className="" onClick={() => addPizzaToCart(pizza.id)}>Add to cart</button>
-          <button className="" onClick={() => addPizzaToFavourite(pizza.id)}>Add to favourites</button>
+          <button className="" onClick={() => addPizzaToCart(pizza.productID)}>Add to cart</button>
+          <button className="" onClick={() => addPizzaToFavourite(pizza.productID)}>Add to favourites</button>
         </div>
       }
       {
         userType === "seller" &&
         <div className="">
           <a href="#" className="">Edit</a>
-          <button className="" onClick={() => deletePizza(pizza.id)}>Delete</button>
+          <button className="" onClick={() => deletePizzaFromList(pizza.productID)}>Delete</button>
         </div>
       }
     </div>
