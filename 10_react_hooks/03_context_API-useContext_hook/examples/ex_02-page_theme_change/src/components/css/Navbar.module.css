@@ -1,0 +1,32 @@
+.navbar {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.navbar-nav li {
+  float: left;
+  padding-right: 5px;
+}
+.navbar-nav li a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}

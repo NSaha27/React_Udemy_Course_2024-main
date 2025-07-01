@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.bg-light {
+  background-color: #f1f1f1;
+}
+.bg-dark {
+  background-color: #181818;
+}
+.text-light {
+  color: #f1f1f1;
+}
+.text-dark {
+  color: #181818;
+}
