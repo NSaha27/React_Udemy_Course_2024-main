@@ -1,0 +1,31 @@
+.add-user-form-container {
+  padding: 0px 8px;
+}
+.form-group {
+  padding-bottom: 4px;
+}
+.form-control {
+  width: 100%;
+  padding: 0.9rem 0.3rem;
+  border: 1px solid #000000;
+}
+.add-user-btn {
+  width: 100%;
+  border: 1.5px solid #000000;
+  padding: 0.5rem;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.add-user-btn:hover {
+  background-color: #f5f5dc;
+}
+.flash-message {
+  width: 100%;
+  border: 1px solid #008000;
+  padding: 0.6rem 1rem;
+  margin-bottom: 8px;
+  text-align: center;
+  background-color: #83ff83;
+  color: #000000;
+}
