@@ -1,8 +1,8 @@
-import { IoHomeOutline } from "react-icons/io5";
 import { BsPostcard } from "react-icons/bs";
-import { MdOutlineVideoSettings } from "react-icons/md";
-import { LiaUserFriendsSolid } from "react-icons/lia";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
+import { LiaUserFriendsSolid } from "react-icons/lia";
+import { MdOutlineVideoSettings } from "react-icons/md";
 
 import { useContext } from "react";
 import ActiveTabContext from "../store/active-tab-context";
@@ -14,7 +14,7 @@ function Header() {
   const isLoggedIn = false;
 
   function handleClick(ev) {
-    const tab = ev.target.value.toLowerCase();
+    const tab = ev.target.parentNode.attributes[5].nodeValue.toLowerCase();
     setActiveTab(tab);
   }
 
@@ -45,12 +45,13 @@ function Header() {
           <li>
             <a
               href="#"
-              className={`nav-link px-2 link-${
+              className={`nav-link link-${
                 activeTab === "home" ? "primary" : "light"
-              } fs-4 mx-3 ${activeTab === "home" && "active"}`}
+              } fs-4 mx-3`}
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
               data-bs-title="Home"
+              value="Home"
               onClick={(ev) => handleClick(ev)}
             >
               <IoHomeOutline />
@@ -59,12 +60,13 @@ function Header() {
           <li>
             <a
               href="#"
-              className={`nav-link px-2 text-${
+              className={`nav-link link-${
                 activeTab === "posts" ? "primary" : "light"
-              } fs-4 mx-3 ${activeTab === "posts" && "active"}`}
+              } fs-4 mx-3`}
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
               data-bs-title="Posts"
+              value="Posts"
               onClick={(ev) => handleClick(ev)}
             >
               <BsPostcard />
@@ -73,12 +75,13 @@ function Header() {
           <li>
             <a
               href="#"
-              className={`nav-link px-2 text-${
+              className={`nav-link link-${
                 activeTab === "watch" ? "primary" : "light"
-              } fs-4 mx-3 ${activeTab === "watch" && "active"}`}
+              } fs-4 mx-3`}
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
               data-bs-title="Watch"
+              value="Watch"
               onClick={(ev) => handleClick(ev)}
             >
               <MdOutlineVideoSettings />
@@ -87,12 +90,13 @@ function Header() {
           <li>
             <a
               href="#"
-              className={`nav-link px-2 text-${
+              className={`nav-link link-${
                 activeTab === "friends" ? "primary" : "light"
-              } fs-4 mx-3 ${activeTab === "friends" && "active"}`}
+              } fs-4 mx-3`}
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
               data-bs-title="Friends"
+              value="Friends"
               onClick={(ev) => handleClick(ev)}
             >
               <LiaUserFriendsSolid />
@@ -101,12 +105,13 @@ function Header() {
           <li>
             <a
               href="#"
-              className={`nav-link px-2 text-${
+              className={`nav-link link-${
                 activeTab === "notifications" ? "primary" : "light"
-              } fs-4 mx-3 ${activeTab === "notifications" && "active"}`}
+              } fs-4 mx-3`}
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
               data-bs-title="Notifications"
+              value="Notifications"
               onClick={(ev) => handleClick(ev)}
             >
               <IoIosNotificationsOutline />

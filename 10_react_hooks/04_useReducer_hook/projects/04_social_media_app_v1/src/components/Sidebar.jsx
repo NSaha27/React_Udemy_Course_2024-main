@@ -1,12 +1,12 @@
-import { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useContext } from "react";
 
 import ActiveTabContext from "../store/active-tab-context";
 
 function Sidebar() {
   const { activeTab, setActiveTab } = useContext(ActiveTabContext);
   function handleClick(ev) {
-    const tab = ev.target.value.toLowerCase();
+    const tab = ev.target.innerText.toLowerCase();
     setActiveTab(tab);
   }
 
@@ -26,7 +26,7 @@ function Sidebar() {
             href="#"
             className={`nav-link ${
               activeTab === "home" ? "active" : "text-light"
-            }}`}
+            }`}
             aria-current="page"
             onClick={(ev) => handleClick(ev)}
           >
@@ -48,7 +48,7 @@ function Sidebar() {
             href="#"
             className={`nav-link ${
               activeTab === "posts" ? "active" : "text-light"
-            }}`}
+            }`}
             onClick={(ev) => handleClick(ev)}
           >
             {" "}
@@ -69,7 +69,7 @@ function Sidebar() {
             href="#"
             className={`nav-link ${
               activeTab === "events" ? "active" : "text-light"
-            }}`}
+            }`}
             onClick={(ev) => handleClick(ev)}
           >
             {" "}
@@ -90,7 +90,7 @@ function Sidebar() {
             href="#"
             className={`nav-link ${
               activeTab === "watch" ? "active" : "text-light"
-            }}`}
+            }`}
             onClick={(ev) => handleClick(ev)}
           >
             {" "}
@@ -111,7 +111,7 @@ function Sidebar() {
             href="#"
             className={`nav-link ${
               activeTab === "saved" ? "active" : "text-light"
-            }}`}
+            }`}
             onClick={(ev) => handleClick(ev)}
           >
             {" "}
