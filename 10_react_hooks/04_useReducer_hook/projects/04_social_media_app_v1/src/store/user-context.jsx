@@ -4,66 +4,13 @@ import userHandleReducer from "../components/user-handle-reducer";
 const UserContext = createContext({
   users: [],
   addUser: () => {},
+  logUserIn: () => {},
   updateUser: () => {},
-  deleteUser: () => {}
+  deleteUser: () => {},
 });
 
-const UserContextProvider = (children) => {
-  const [users, userDispatcher] = useReducer(userHandleReducer, users);
-
-  const addUser = (username, name, gender, address, phone, email, password, education = [], jobs = [], posts = []) => {
-    const addUserAction = {
-      type: "ADD_USER",
-      payload: {
-        username, 
-        name, 
-        gender, 
-        address, 
-        phone, 
-        email, 
-        password, 
-        education, 
-        jobs, 
-        posts
-      }
-    };
-    userDispatcher(addUserAction);
-  };
-  const updateUser = (username, name, gender, address, phone, email, password, education = [], jobs = [], posts = []) => {
-    const updateUserAction = {
-      type: "UPDATE_USER",
-      payload: {
-        username, 
-        name, 
-        gender, 
-        address, 
-        phone, 
-        email, 
-        password, 
-        education, 
-        jobs, 
-        posts
-      }
-    }
-    userDispatcher(updateUserAction);
-  }
-  const deleteUser = (username) => {
-    const deleteUserAction = {
-      type: "DELETE_USER",
-      payload: {
-        username,
-      }
-    }
-    userDispatcher(deleteUserAction);
-  }
-
-  return <UserContext.Provider value={{users, addUser, updateUser, deleteUser}}>
-    {children}
-  </UserContext.Provider>
-};
-
 // USERS
-const users = [
+const userList = [
   {
     username: "NILADRISAHA",
     name: "Niladri Saha",
@@ -71,18 +18,18 @@ const users = [
     education: [
       {
         degree: "B.Com",
-        institution: "University of Calcutta"
-      }
+        institution: "University of Calcutta",
+      },
     ],
     jobs: [
       {
         role: "Subject matter expert",
-        company: "Chegg India Pvt. Ltd."
+        company: "Chegg India Pvt. Ltd.",
       },
       {
         role: "Full stack developer",
-        company: "Geotech Infoservices"
-      }
+        company: "Geotech Infoservices",
+      },
     ],
     address: "Howrah",
     phone: "+918420520494",
@@ -96,9 +43,9 @@ const users = [
         images: ["college_convocation_1.jpg"],
         likes: 1,
         shares: 2,
-        comments: []
-      }
-    ]
+        comments: [],
+      },
+    ],
   },
   {
     username: "TISTADUTTA",
@@ -107,18 +54,18 @@ const users = [
     education: [
       {
         degree: "B.Tech(elec.)",
-        institution: "MAKAUT"
-      }
+        institution: "MAKAUT",
+      },
     ],
     jobs: [
       {
         role: "Backend developer",
-        company: "DreamzTech Solutions"
+        company: "DreamzTech Solutions",
       },
       {
         role: "Quality assurance analyst",
-        company: "CODECLOUDS"
-      }
+        company: "CODECLOUDS",
+      },
     ],
     address: "Serampore",
     phone: "+919163532961",
@@ -132,11 +79,100 @@ const users = [
         images: ["college_convocation_1.jpg"],
         likes: 1,
         shares: 2,
-        comments: []
-      }
-    ]
-  }
+        comments: [],
+      },
+    ],
+  },
 ];
 
-export { UserContext, UserContextProvider };
+const UserContextProvider = (children) => {
+  const [users, userDispatcher] = useReducer(userHandleReducer, userList);
 
+  const addUser = (
+    username,
+    name,
+    gender,
+    address,
+    phone,
+    email,
+    password,
+    education = [],
+    jobs = [],
+    posts = []
+  ) => {
+    const addUserAction = {
+      type: "ADD_USER",
+      payload: {
+        username,
+        name,
+        gender,
+        address,
+        phone,
+        email,
+        password,
+        education,
+        jobs,
+        posts,
+      },
+    };
+    userDispatcher(addUserAction);
+  };
+  const logUserIn = (username, password) => {
+    const userLoginAction = {
+      type: "USER_LOGIN",
+      payload: {
+        username,
+        password,
+      },
+    };
+    userDispatcher(userLoginAction);
+  };
+  const updateUser = (
+    username,
+    name,
+    gender,
+    address,
+    phone,
+    email,
+    password,
+    education = [],
+    jobs = [],
+    posts = []
+  ) => {
+    const updateUserAction = {
+      type: "UPDATE_USER",
+      payload: {
+        username,
+        name,
+        gender,
+        address,
+        phone,
+        email,
+        password,
+        education,
+        jobs,
+        posts,
+      },
+    };
+    userDispatcher(updateUserAction);
+  };
+  const deleteUser = (username) => {
+    const deleteUserAction = {
+      type: "DELETE_USER",
+      payload: {
+        username,
+      },
+    };
+    userDispatcher(deleteUserAction);
+  };
+
+  return (
+    <UserContext.Provider
+      value={{ users, addUser, logUserIn, updateUser, deleteUser }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+export { UserContext, UserContextProvider };
