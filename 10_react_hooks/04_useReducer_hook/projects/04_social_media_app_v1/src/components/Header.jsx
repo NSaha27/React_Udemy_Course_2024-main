@@ -6,14 +6,14 @@ import { MdOutlineVideoSettings } from "react-icons/md";
 
 import { useContext } from "react";
 import ActiveTabContext from "../store/active-tab-context";
-import LoginStatusContext from "../store/login-status-context";
+import LoginUserContext from "../store/login-user-context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Header({ setLoginSignupStatus }) {
   const { activeTab, setActiveTab } = useContext(ActiveTabContext);
-  const { loginStatus, setLoginStatus } = useContext(LoginStatusContext);
-  const isLoggedIn = loginStatus;
+  const { loginUser, setLoginUser } = useContext(LoginUserContext);
+  const isLoggedIn = loginUser.length > 0 ? true : false;
 
   function handleClick(ev) {
     const tab = ev.target.parentNode.attributes[5].nodeValue.toLowerCase();

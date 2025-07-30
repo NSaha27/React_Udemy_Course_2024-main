@@ -2,7 +2,7 @@ import { createContext, useReducer } from "react";
 import userHandleReducer from "../components/user-handle-reducer";
 
 const UserContext = createContext({
-  users: [],
+  listOfUsers: [],
   addUser: () => {},
   logUserIn: () => {},
   updateUser: () => {},

@@ -1,20 +1,22 @@
 import { useContext } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginStatusContext from "../store/login-status-context";
+import LoginUserContext from "../store/login-user-context";
 import { UserContext } from "../store/user-context";
 
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
-import DisplayPost from "./DisplayPosts";
+// import DisplayPost from "./DisplayPosts";
 import Sidebar from "./Sidebar";
 import Sponsor from "./Sponsor";
 
 function Main({ loginSignupStatus }) {
-  const { loginStatus } = useContext(LoginStatusContext);
-  const isLoggedIn = loginStatus;
-  const { users } = useContext(UserContext);
+  const { loginUser } = useContext(LoginUserContext);
+  const isLoggedIn = loginUser.length > 0 ? true : false;
+  const { listOfUsers } = useContext(UserContext);
+  console.log(listOfUsers);
+  
   
   return (
     <main className="row position-relative">
@@ -26,11 +28,14 @@ function Main({ loginSignupStatus }) {
         {isLoggedIn ? (
           <>
             <div className="create-post"></div>
-            {users.map((user) => {
-              if (user.username === username) {
-                return <DisplayPost user={user.name} post={user.posts} />;
-              }
-            })}
+            {
+              listOfUsers.length > 0 && 
+              listOfUsers.map(user => {
+                if(user.username === loginUser){
+                  <DisplayPost user={user.name} post={user.posts} />
+                }
+              })
+            }
           </>
         ) : loginSignupStatus === "login" ? (
           <LoginForm />

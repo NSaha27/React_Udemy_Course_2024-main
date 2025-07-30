@@ -4,20 +4,20 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import ActiveTabContext from "./store/active-tab-context";
-import LoginStatusContext from "./store/login-status-context";
+import LoginUserContext from "./store/login-user-context";
 
 function App() {
   const [activeTab, setActiveTab] = useState("home");
   const [loginSignupStatus, setLoginSignupStatus] = useState("login");
-  const [loginStatus, setLoginStatus] = useState(false);
+  const [loginUser, setLoginUser] = useState("");
 
   return (
     <>
       <ActiveTabContext.Provider value={{ activeTab, setActiveTab }}>
-        <LoginStatusContext.Provider value={{ loginStatus, setLoginStatus }}>
+        <LoginUserContext.Provider value={{ loginUser, setLoginUser }}>
           <Header setLoginSignupStatus={setLoginSignupStatus} />
           <Main loginSignupStatus={loginSignupStatus} />
-        </LoginStatusContext.Provider>
+        </LoginUserContext.Provider>
       </ActiveTabContext.Provider>
     </>
   );
