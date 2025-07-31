@@ -1,9 +1,9 @@
-const userHandleReducer = (currUsers, action) => {
-  let newUserList = currUsers;
+const userHandleReducer = (users, action) => {
+  let newUserList = users;
   switch (action.type) {
     case "ADD_USER": {
       newUserList = [
-        ...currUsers,
+        ...users,
         {
           username: action.payload.username,
           name: action.payload.name,
@@ -19,14 +19,8 @@ const userHandleReducer = (currUsers, action) => {
       ];
       return newUserList;
     }
-    case "USER_LOGIN": {
-      const { username, password } = action.payload;
-      return currUsers.filter(
-        (user) => user.username === username && user.password === password
-      );
-    }
     case "UPDATE_USER": {
-      newUserList = currUsers.map((user) => {
+      newUserList = users.map((user) => {
         if (user.username === action.payload.username) {
           return {
             username: action.payload.username,
@@ -47,7 +41,7 @@ const userHandleReducer = (currUsers, action) => {
       return newUserList;
     }
     case "DELETE_USER": {
-      newUserList = currUsers.filter(
+      newUserList = users.filter(
         (user) => user.username !== action.payload.username
       );
       return newUserList;

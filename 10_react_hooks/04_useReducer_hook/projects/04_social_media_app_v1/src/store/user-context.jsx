@@ -2,7 +2,7 @@ import { createContext, useReducer } from "react";
 import userHandleReducer from "../components/user-handle-reducer";
 
 const UserContext = createContext({
-  listOfUsers: [],
+  users: [],
   addUser: () => {},
   logUserIn: () => {},
   updateUser: () => {},
@@ -85,7 +85,7 @@ const userList = [
   },
 ];
 
-const UserContextProvider = (children) => {
+const UserContextProvider = ({children}) => {
   const [users, userDispatcher] = useReducer(userHandleReducer, userList);
 
   const addUser = (
@@ -117,16 +117,16 @@ const UserContextProvider = (children) => {
     };
     userDispatcher(addUserAction);
   };
-  const logUserIn = (username, password) => {
-    const userLoginAction = {
-      type: "USER_LOGIN",
-      payload: {
-        username,
-        password,
-      },
-    };
-    userDispatcher(userLoginAction);
-  };
+  // const logUserIn = (username, password) => {
+  //   const userLoginAction = {
+  //     type: "USER_LOGIN",
+  //     payload: {
+  //       username,
+  //       password,
+  //     },
+  //   };
+  //   userDispatcher(userLoginAction);
+  // };
   const updateUser = (
     username,
     name,

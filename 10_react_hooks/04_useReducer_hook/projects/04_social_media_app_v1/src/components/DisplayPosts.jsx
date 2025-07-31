@@ -4,54 +4,63 @@ import { FaRegShareFromSquare } from "react-icons/fa6";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function DisplayPost({ user, post }) {
-  return (
-    <div className="">
-      <div className="w-100p py-2 post-creator">
+function DisplayPost({ user, posts }) {
+  {
+    return (!user.length > 0 && !posts.length > 0) ? null :
+    <>
+    {
+      posts.map(post => {
+        return <div className="" key={post.id}>
+        <div className="w-100p py-2 post-creator">
         <span className="">
-          <a
-            href="#"
-            className="d-block link-body-emphasis text-decoration-none"
-          >
-            {" "}
-            <img
-              src="https://github.com/mdo.png"
-              alt="mdo"
-              width="32"
-              height="32"
-              className="rounded-circle"
-            />{" "}
-          </a>{" "}
-          <a href="#" className="text-decoration-none">
-            {user}
-          </a>
+        <a
+        href="#"
+        className="d-block link-body-emphasis text-decoration-none"
+        >
+        {" "}
+        <img
+        src="https://github.com/mdo.png"
+        alt="mdo"
+        width="32"
+        height="32"
+        className="rounded-circle"
+        />{" "}
+        </a>{" "}
+        <a href="#" className="text-decoration-none">
+        {user}
+        </a>
         </span>
-      </div>
-      <div className="w-100 py-2 post-details">
+        </div>
+        <div className="w-100 py-2 post-details">
         <h4 className="">{post.title}</h4>
         <p className="">{post.desc}</p>
-      </div>
-      <div className="w-100 py-2 post-images">
+        </div>
+        <div className="w-100 py-2 post-images">
         {post.images.length === 1 && (
           <div className="row">
-            <div className="col-12">{post.images[0]}</div>
+          <div className="col-12"><img src={`images/${post.images[0]}`} alt="" className="img-fluid" /></div>
           </div>
         )}
         {post.images.length > 1 && (
           <div className="row">
-            {post.images.map((image) => {
-              <img src={`images/${image}`} alt="" className="col-6" />;
-            })}
+          {post.images.map((image, indx) => {
+            return <div className="col-6" key={indx}>
+            <img src={`images/${image}`} alt="" className="" />
+            </div>;
+          })}
           </div>
         )}
-      </div>
-      <div className="w-100 py-2 d-flex flex-wrap justify-content-around align-items-center like-share-comments">
+        </div>
+        <div className="w-100 py-2 d-flex flex-wrap justify-content-around align-items-center like-share-comments">
         <AiOutlineLike />
         <FaRegCommentDots />
         <FaRegShareFromSquare />
-      </div>
-    </div>
-  );
+        </div>
+        </div>
+      })
+    }
+    </>
+    }
 }
 
 export default DisplayPost;

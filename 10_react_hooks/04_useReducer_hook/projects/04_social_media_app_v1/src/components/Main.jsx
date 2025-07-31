@@ -7,15 +7,15 @@ import { UserContext } from "../store/user-context";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
-// import DisplayPost from "./DisplayPosts";
+import DisplayPost from "./DisplayPosts";
 import Sidebar from "./Sidebar";
 import Sponsor from "./Sponsor";
 
 function Main({ loginSignupStatus }) {
   const { loginUser } = useContext(LoginUserContext);
   const isLoggedIn = loginUser.length > 0 ? true : false;
-  const { listOfUsers } = useContext(UserContext);
-  console.log(listOfUsers);
+  const { users } = useContext(UserContext);
+  console.log(users);
   
   
   return (
@@ -29,10 +29,10 @@ function Main({ loginSignupStatus }) {
           <>
             <div className="create-post"></div>
             {
-              listOfUsers.length > 0 && 
-              listOfUsers.map(user => {
+              users.length > 0 && 
+              users.map(user => {
                 if(user.username === loginUser){
-                  <DisplayPost user={user.name} post={user.posts} />
+                  return <DisplayPost user={user.name} posts={user.posts} key={user.username} />
                 }
               })
             }
