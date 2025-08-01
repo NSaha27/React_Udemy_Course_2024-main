@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginUserContext from "../store/login-user-context";
+import { LoginUserContext } from "../store/login-user-context";
 import { UserContext } from "../store/user-context";
 
 import LoginForm from "./LoginForm";
@@ -13,7 +13,6 @@ import Sponsor from "./Sponsor";
 
 function Main({ loginSignupStatus }) {
   const { loginUser } = useContext(LoginUserContext);
-  const isLoggedIn = loginUser.length > 0 ? true : false;
   const { users } = useContext(UserContext);
   console.log(users);
   
@@ -25,7 +24,7 @@ function Main({ loginSignupStatus }) {
         className="section col-lg-7 d-flex align-items-center p-5"
         style={{ minHeight: "90vh" }}
       >
-        {isLoggedIn ? (
+        {loginUser.length > 0 ? (
           <>
             <div className="create-post"></div>
             {

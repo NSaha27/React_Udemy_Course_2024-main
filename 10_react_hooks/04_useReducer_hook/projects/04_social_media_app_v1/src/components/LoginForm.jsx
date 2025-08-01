@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import LoginUserContext from "../store/login-user-context";
+import {LoginUserContext} from "../store/login-user-context";
 import { UserContext } from "../store/user-context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function LoginForm() {
-  const { logUserIn } = useContext(UserContext);
+  const { users } = useContext(UserContext);
   const { setLoginUser } = useContext(LoginUserContext);
   const [formData, setFormData] = useState({});
 
@@ -17,9 +17,13 @@ function LoginForm() {
   function handleLogin(ev) {
     ev.preventDefault();
     try {
-      logUserIn(formData.username, formData.password);
-      setLoginUser(formData.username);
-      console.log("log in successful!");
+      const isUserFound = users.find((user) => user.username === formData.username && user.password === formData.password);
+      if(isUserFound){
+        setLoginUser(formData.username);
+        console.log("log in successful!");
+      }else{
+        console.log("log in failed, no such user exists!");
+      }
     } catch (err) {
       console.log(`log in failed, error: ${err.message}`);
     }

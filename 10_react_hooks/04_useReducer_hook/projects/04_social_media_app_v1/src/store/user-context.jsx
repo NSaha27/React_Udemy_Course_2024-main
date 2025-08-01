@@ -4,7 +4,6 @@ import userHandleReducer from "../components/user-handle-reducer";
 const UserContext = createContext({
   users: [],
   addUser: () => {},
-  logUserIn: () => {},
   updateUser: () => {},
   deleteUser: () => {},
 });
@@ -117,16 +116,6 @@ const UserContextProvider = ({children}) => {
     };
     userDispatcher(addUserAction);
   };
-  // const logUserIn = (username, password) => {
-  //   const userLoginAction = {
-  //     type: "USER_LOGIN",
-  //     payload: {
-  //       username,
-  //       password,
-  //     },
-  //   };
-  //   userDispatcher(userLoginAction);
-  // };
   const updateUser = (
     username,
     name,
@@ -168,7 +157,7 @@ const UserContextProvider = ({children}) => {
 
   return (
     <UserContext.Provider
-      value={{ users, addUser, logUserIn, updateUser, deleteUser }}
+      value={{ users, addUser, updateUser, deleteUser }}
     >
       {children}
     </UserContext.Provider>
