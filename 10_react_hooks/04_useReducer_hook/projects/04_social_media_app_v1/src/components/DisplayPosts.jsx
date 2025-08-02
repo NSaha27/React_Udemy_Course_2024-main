@@ -10,7 +10,7 @@ function DisplayPost({ user, posts }) {
     <>
     {
       posts.map(post => {
-        return <div className="w-75 mx-auto p-4 rounded-2" style={{backgroundColor: "beige", boxShadow: "0 2px 10px #aaa"}} key={post.id}>
+        return <div className="w-75 mx-auto p-4 rounded-2 mb-4" style={{backgroundColor: "beige", boxShadow: "0 2px 10px #aaa"}} key={post.id}>
         <div className="w-100p py-2 post-creator">
         <span className="">
         <a
@@ -30,7 +30,7 @@ function DisplayPost({ user, posts }) {
         </span>
         </div>
         <div className="w-100 py-2 post-details">
-        <h4 className="">{post.title}</h4>
+        <h4 className="mb-4">{post.title}</h4>
         <p className="">{post.desc}</p>
         </div>
         <div className="w-100 py-2 post-images">
@@ -52,15 +52,15 @@ function DisplayPost({ user, posts }) {
         <div className="w-100 py-2 d-flex flex-wrap justify-content-around align-items-center like-share-comments">
           <span className="d-flex flex-row">
             <AiOutlineLike style={{fontSize: "1.4rem", cursor: "pointer", marginRight: "0.4rem"}} />{" "}
-            <span className="">2 likes</span>
+            <span className="">{post.likes} likes</span>
           </span>
           <span className="d-flex flex-row">
             <FaRegCommentDots style={{fontSize: "1.4rem", cursor: "pointer", marginRight: "0.4rem"}} />{" "}
-            <span className="">3 comments</span>
+            <span className="">{post.comments.length} comments</span>
           </span>
           <span className="d-flex flex-row">
             <FaRegShareFromSquare style={{fontSize: "1.4rem", cursor: "pointer", marginRight: "0.4rem"}} />{" "}
-            <span className="">1 share</span>
+            <span className="">{post.shares} shares</span>
           </span>
         </div>
         </div>
