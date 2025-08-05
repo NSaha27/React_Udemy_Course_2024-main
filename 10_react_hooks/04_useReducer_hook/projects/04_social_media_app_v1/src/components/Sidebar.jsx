@@ -2,9 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext } from "react";
 
 import { ActiveTabContext } from "../store/active-tab-context";
+import { LoginUserContext } from "../store/login-user-context";
 
 function Sidebar() {
   const { activeTab, setActiveTab } = useContext(ActiveTabContext);
+  const { loginUser } = useContext(LoginUserContext);
+
   function handleClick(ev) {
     const tab = ev.target.innerText.toLowerCase();
     setActiveTab(tab);
@@ -42,90 +45,94 @@ function Sidebar() {
             Home
           </a>{" "}
         </li>{" "}
-        <li>
-          {" "}
-          <a
-            href="#"
-            className={`nav-link ${
-              activeTab === "posts" ? "active" : "text-light"
-            }`}
-            onClick={(ev) => handleClick(ev)}
-          >
-            {" "}
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#speedometer2"></use>
-            </svg>
-            Posts
-          </a>{" "}
-        </li>{" "}
-        <li>
-          {" "}
-          <a
-            href="#"
-            className={`nav-link ${
-              activeTab === "events" ? "active" : "text-light"
-            }`}
-            onClick={(ev) => handleClick(ev)}
-          >
-            {" "}
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#speedometer2"></use>
-            </svg>
-            Events
-          </a>{" "}
-        </li>{" "}
-        <li>
-          {" "}
-          <a
-            href="#"
-            className={`nav-link ${
-              activeTab === "watch" ? "active" : "text-light"
-            }`}
-            onClick={(ev) => handleClick(ev)}
-          >
-            {" "}
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#speedometer2"></use>
-            </svg>
-            Watch
-          </a>{" "}
-        </li>{" "}
-        <li>
-          {" "}
-          <a
-            href="#"
-            className={`nav-link ${
-              activeTab === "saved" ? "active" : "text-light"
-            }`}
-            onClick={(ev) => handleClick(ev)}
-          >
-            {" "}
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#speedometer2"></use>
-            </svg>
-            Saved
-          </a>{" "}
-        </li>{" "}
+        {loginUser.length > 0 && (
+          <>
+            <li>
+              {" "}
+              <a
+                href="#"
+                className={`nav-link ${
+                  activeTab === "posts" ? "active" : "text-light"
+                }`}
+                onClick={(ev) => handleClick(ev)}
+              >
+                {" "}
+                <svg
+                  className="bi pe-none me-2"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <use xlinkHref="#speedometer2"></use>
+                </svg>
+                Posts
+              </a>{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <a
+                href="#"
+                className={`nav-link ${
+                  activeTab === "events" ? "active" : "text-light"
+                }`}
+                onClick={(ev) => handleClick(ev)}
+              >
+                {" "}
+                <svg
+                  className="bi pe-none me-2"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <use xlinkHref="#speedometer2"></use>
+                </svg>
+                Events
+              </a>{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <a
+                href="#"
+                className={`nav-link ${
+                  activeTab === "watch" ? "active" : "text-light"
+                }`}
+                onClick={(ev) => handleClick(ev)}
+              >
+                {" "}
+                <svg
+                  className="bi pe-none me-2"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <use xlinkHref="#speedometer2"></use>
+                </svg>
+                Watch
+              </a>{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <a
+                href="#"
+                className={`nav-link ${
+                  activeTab === "saved" ? "active" : "text-light"
+                }`}
+                onClick={(ev) => handleClick(ev)}
+              >
+                {" "}
+                <svg
+                  className="bi pe-none me-2"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <use xlinkHref="#speedometer2"></use>
+                </svg>
+                Saved
+              </a>{" "}
+            </li>{" "}
+          </>
+        )}
       </ul>{" "}
       <hr />
     </div>

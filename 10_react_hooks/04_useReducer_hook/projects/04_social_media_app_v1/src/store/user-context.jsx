@@ -84,7 +84,7 @@ const userList = [
   },
 ];
 
-const UserContextProvider = ({children}) => {
+const UserContextProvider = ({ children }) => {
   const [users, userDispatcher] = useReducer(userHandleReducer, userList);
 
   const addUser = (
@@ -156,9 +156,7 @@ const UserContextProvider = ({children}) => {
   };
 
   return (
-    <UserContext.Provider
-      value={{ users, addUser, updateUser, deleteUser }}
-    >
+    <UserContext.Provider value={{ users, addUser, updateUser, deleteUser }}>
       {children}
     </UserContext.Provider>
   );
