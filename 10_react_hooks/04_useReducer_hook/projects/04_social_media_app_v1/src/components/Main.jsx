@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { LoginUserContext } from "../store/login-user-context";
@@ -14,9 +14,10 @@ import Sponsor from "./Sponsor";
 function Main({ loginSignupStatus }) {
   const { loginUser } = useContext(LoginUserContext);
   const { users } = useContext(UserContext);
+  const [displayAddPostForm, setDisplayAddPostForm] = useState(false);
 
-  function handleCreatePost(ev) {
-    // do something
+  function handleCreatePost() {
+    setDisplayAddPostForm(!displayAddPostForm);
   }
 
   return (
@@ -30,12 +31,54 @@ function Main({ loginSignupStatus }) {
           <>
             <div className="w-75 mx-auto mb-4 d-block">
               <button
-                className="btn btn-md btn-success float-end"
+                type="button"
+                className="btn btn-success float-end"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
                 onClick={handleCreatePost}
               >
                 Create a post
               </button>
             </div>
+            {displayAddPostForm && (
+              <div
+                className="modal fade"
+                id="exampleModal"
+                tabIndex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h1 className="modal-title fs-5" id="exampleModalLabel">
+                        Modal title
+                      </h1>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">...</div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" className="btn btn-primary">
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {users.length > 0 &&
               users.map((user) => {
                 return (

@@ -6,6 +6,9 @@ const UserContext = createContext({
   addUser: () => {},
   updateUser: () => {},
   deleteUser: () => {},
+  addPost: () => {},
+  updatePost: () => {},
+  deletePost: () => {},
 });
 
 // USERS
@@ -154,9 +157,65 @@ const UserContextProvider = ({ children }) => {
     };
     userDispatcher(deleteUserAction);
   };
+  const addPost = (
+    username,
+    title,
+    desc,
+    images = [],
+    likes = 0,
+    shares = 0,
+    comments = []
+  ) => {
+    const addPostAction = {
+      type: "ADD_POST",
+      payload: {
+        username,
+        title,
+        desc,
+        images,
+        likes,
+        shares,
+        comments,
+      },
+    };
+    userDispatcher(addPostAction);
+  };
+  const updatePost = (username, postId, title, desc, images = []) => {
+    const updatePostAction = {
+      type: "UPDATE_POST",
+      payload: {
+        username,
+        postId,
+        title,
+        desc,
+        images,
+      },
+    };
+    userDispatcher(updatePostAction);
+  };
+  const deletePost = (username, postId) => {
+    const deletePostAction = {
+      type: "DELETE_POST",
+      payload: {
+        username,
+        postId,
+      },
+    };
+    userDispatcher(deletePostAction);
+  };
 
   return (
-    <UserContext.Provider value={{ users, addUser, updateUser, deleteUser }}>
+    <UserContext.Provider
+      value={{
+        users,
+        addUser,
+        updateUser,
+        deleteUser,
+        addPost,
+        updatePost,
+        deletePost,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
