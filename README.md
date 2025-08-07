@@ -181,6 +181,20 @@ What does a declarative approach do :
     4. Use onChange for controlled form inputs,
     5. Avoid inline arrow functions in JSX for better performance and cleaner code.
 
+17. a. What is SyntheticBaseEvent?
+        SyntheticBaseEvent is a wrapper around the browser's native event. It is used to providing cross-border compatibility and consistent event handling accrose different elements and browsers.
+    b. Different types of React.js events:
+        onClick - triggered when an element is clicked,
+        onChange - triggered when the value of an input element gets changed,
+        onSubmit - triggered when a form is submitted,
+        onMouseEnter - triggered when the mouse pointer enters an element,
+        onMouseLeave - triggered when the mouse pointer leaves an element,
+        onKeyDown - triggered when a key is pressed down,
+        onKeyUp - triggered when a key is released,
+        onFocus - triggered when an element receives focus,
+        onBlur - triggered when an element loses focus,
+        onInput - triggered when the value of an input element is changed.
+
 18. Passing functions via props?
 
     1. Pass dynamic behavior between components,
