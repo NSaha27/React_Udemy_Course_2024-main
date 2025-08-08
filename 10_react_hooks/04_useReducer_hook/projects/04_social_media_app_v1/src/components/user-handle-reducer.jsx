@@ -62,8 +62,10 @@ const userHandleReducer = (users, action) => {
               comments: action.payload.comments,
             },
           ];
-          user.posts = newPostList;
-          return user;
+          return {
+            ...user,
+            posts: newPostList,
+          };
         } else {
           return user;
         }
@@ -88,8 +90,10 @@ const userHandleReducer = (users, action) => {
               return post;
             }
           });
-          user.posts = updatedPostList;
-          return user;
+          return {
+            ...user,
+            posts: updatedPostList,
+          };
         } else {
           return user;
         }
@@ -102,8 +106,10 @@ const userHandleReducer = (users, action) => {
           const newPostList = user.posts.filter(
             (post) => post.id !== action.payload.postId
           );
-          user.posts = newPostList;
-          return user;
+          return {
+            ...user,
+            posts: newPostList,
+          };
         } else {
           return user;
         }
