@@ -6,10 +6,16 @@ import { UserContext } from "../store/user-context";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function LoginForm() {
-  const { users } = useContext(UserContext);
+  const { users, addInitialUsers } = useContext(UserContext);
   const { setLoginUser } = useContext(LoginUserContext);
-  const {addInitialPosts} = useContext(PostContext);
+  const { addInitialPosts } = useContext(PostContext);
   const [formData, setFormData] = useState({});
+
+  function handleAddInitialUsers() {
+    fetch("https://dummyjson.com/posts/userId")
+      .then((res) => res.json())
+      .then((data) => addInitialUsers(data));
+  }
 
   function handleChange(ev) {
     const { name, value } = ev.target;
@@ -19,14 +25,17 @@ function LoginForm() {
   function handleLogin(ev) {
     ev.preventDefault();
     try {
-      const isUserFound = users.find((user) => user.username === formData.username && user.password === formData.password);
-      if(isUserFound){
-        setLoginUser(formData.username);
+      const isUserFound = users.find(
+        (user) =>
+          user.userId === formData.userId && user.password === formData.password
+      );
+      if (isUserFound) {
+        setLoginUser(formData.userId);
         console.log("log in successful!");
         fetch("https://dummyjson.com/posts")
           .then((res) => res.json())
-          .then(data => addInitialPosts(data));
-      }else{
+          .then((data) => addInitialPosts(data));
+      } else {
         console.log("log in failed, no such user exists!");
       }
     } catch (err) {
@@ -35,7 +44,7 @@ function LoginForm() {
   }
 
   return (
-    <div className="form-signin w-100 m-auto">
+    <div className="form-signin w-100 m-auto" onLoad={handleAddInitialUsers}>
       <form action={"#"} method={"POST"} onSubmit={handleLogin}>
         {" "}
         <div className="">
@@ -46,12 +55,12 @@ function LoginForm() {
           <input
             type="text"
             className="form-control"
-            id="username"
-            name={"username"}
-            placeholder="enter your username"
+            id="userId"
+            name={"userId"}
+            placeholder="enter your user ID"
             onChange={handleChange}
           />{" "}
-          <label htmlFor="username">Username</label>{" "}
+          <label htmlFor="username">User ID</label>{" "}
         </div>{" "}
         <div className="form-floating mb-3">
           {" "}
@@ -60,7 +69,7 @@ function LoginForm() {
             className="form-control"
             id="password"
             name={"password"}
-            placeholder="enter your password"
+            placeholder="let the password be blank"
             onChange={handleChange}
           />{" "}
           <label htmlFor="password">Password</label>{" "}

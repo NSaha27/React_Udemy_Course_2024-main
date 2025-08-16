@@ -5,7 +5,7 @@ const userHandleReducer = (users, action) => {
       newUserList = [
         ...users,
         {
-          username: action.payload.username,
+          userId: action.payload.userId,
           name: action.payload.name,
           gender: action.payload.gender,
           education: action.payload.education,
@@ -14,16 +14,33 @@ const userHandleReducer = (users, action) => {
           phone: action.payload.phone,
           email: action.payload.email,
           password: action.payload.password,
-          posts: action.payload.posts,
         },
       ];
       return newUserList;
     }
+    case "ADD_INITIAL_USERS": {
+      const initialUserList = [];
+      for (let uId of action.payload.userIds) {
+        initialUserList.push({
+          userId: uId,
+          name: "",
+          gender: "",
+          education: [],
+          jobs: [],
+          address: "",
+          phone: "",
+          email: "",
+          password: "",
+        });
+      }
+      newUserList = [...initialUserList];
+      return newUserList;
+    }
     case "UPDATE_USER": {
       newUserList = users.map((user) => {
-        if (user.username === action.payload.username) {
+        if (user.userId === action.payload.userId) {
           return {
-            username: action.payload.username,
+            userId: action.payload.userId,
             name: action.payload.name,
             gender: action.payload.gender,
             education: action.payload.education,
@@ -32,7 +49,6 @@ const userHandleReducer = (users, action) => {
             phone: action.payload.phone,
             email: action.payload.email,
             password: action.payload.password,
-            posts: action.payload.posts,
           };
         } else {
           return user;
@@ -42,78 +58,8 @@ const userHandleReducer = (users, action) => {
     }
     case "DELETE_USER": {
       newUserList = users.filter(
-        (user) => user.username !== action.payload.username
+        (user) => user.userId !== action.payload.userId
       );
-      return newUserList;
-    }
-    case "ADD_POST": {
-      newUserList = users.map((user) => {
-        if (user.username === action.payload.username) {
-          const postId = user.posts.length;
-          const newPostList = [
-            ...user.posts,
-            {
-              id: postId,
-              title: action.payload.title,
-              desc: action.payload.desc,
-              images: action.payload.images,
-              likes: action.payload.likes,
-              shares: action.payload.shares,
-              comments: action.payload.comments,
-            },
-          ];
-          return {
-            ...user,
-            posts: newPostList,
-          };
-        } else {
-          return user;
-        }
-      });
-      return newUserList;
-    }
-    case "UPDATE_POST": {
-      newUserList = users.map((user) => {
-        if (user.username === action.payload.username) {
-          const updatedPostList = user.posts.map((post) => {
-            if (post.id === action.payload.postId) {
-              return {
-                id: post.id,
-                title: action.payload.title,
-                desc: action.payload.desc,
-                images: action.payload.images,
-                likes: post.likes,
-                shares: post.shares,
-                comments: post.comments,
-              };
-            } else {
-              return post;
-            }
-          });
-          return {
-            ...user,
-            posts: updatedPostList,
-          };
-        } else {
-          return user;
-        }
-      });
-      return newUserList;
-    }
-    case "DELETE_POST": {
-      newUserList = users.map((user) => {
-        if (user.username === action.payload.username) {
-          const newPostList = user.posts.filter(
-            (post) => post.id !== action.payload.postId
-          );
-          return {
-            ...user,
-            posts: newPostList,
-          };
-        } else {
-          return user;
-        }
-      });
       return newUserList;
     }
     default: {
